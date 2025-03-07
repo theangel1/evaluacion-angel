@@ -52,6 +52,7 @@
      - que despliegue la colección proporcionada por el endpoint.
      - que permita visualizar la información individual de cada elemento (una vista detalle)
      - de existir posibles nuevas secciones para visualización, que se pueda acceder a ellas por medio del `<header>`
+     - la aplicación debe dockerizar correctamente, la revisión de esta será por medio su despliegue en un contenedor
      
 ## 2 Ejercicios
   - Con los datos obtenidos de la API organizar colecciones (characters) según siguientes criterios (idealmente de forma dinámica por medio de input):
