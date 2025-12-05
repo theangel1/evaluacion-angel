@@ -43,6 +43,31 @@ private messageService = inject(MessageService);
                   }
                 ]
             },
+              {
+                label: 'Rick and Morty',
+                items:
+                [
+                  {
+                    label: 'Lista de Urls',
+                    ngIconSet: 'hero',
+                    ngIconName: 'listBullet',                    
+                    routerLink: ['/urls']
+                  },
+                   {
+                    label: 'Personajes',
+                    ngIconSet: 'hero',
+                    ngIconName: 'users',                    
+                    routerLink: ['/characters']
+                  },
+                  {
+                    label: 'Lugares',
+                    ngIconSet: 'hero',
+                    ngIconName: 'mapPin',                    
+                    routerLink: ['/locations']
+                  },
+                  
+                ]
+            },
             {
                 label: 'ADICIONALES',
                 items:
