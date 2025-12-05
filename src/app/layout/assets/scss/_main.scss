@@ -1,0 +1,16 @@
+.layout-main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 92vh;
+    justify-content: space-between;
+    padding: 2rem 2rem 0 2rem;
+    transition: margin-left var(--layout-section-transition-duration);
+    background: url('/left.webp') left 40% no-repeat, url('/right.webp') right 85% no-repeat !important;
+    // height: 97vh;
+    // width: 70vw;
+}
+
+.layout-main {
+    flex: 1 1 auto;
+    padding-bottom: 2rem;
+}

@@ -1,0 +1,17 @@
+@use "./layout/assets/scss/layout.scss";
+
+/**GLOBAL STYLES */
+.rotate-90 {
+  transform: rotate(90deg);
+}
+.transition-transform {
+  transition: transform 0.3s;
+}
+.duration-300 {
+  transition-duration: 0.3s;
+}
+
+/* Esto afecta a todos los p-select con filtro */
+::ng-deep .p-select .p-select-filter {
+  padding-right: 2.5rem; /* espacio para el icono */
+}
