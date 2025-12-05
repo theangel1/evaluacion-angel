@@ -3,7 +3,7 @@ import { provideRouter, withEnabledBlockingInitialNavigation, withInMemoryScroll
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { routes } from './app.routes';
 import { providePrimeNG } from 'primeng/config';
-import customTheme from './resources/custom-theme';
+import customTheme from '../resources/custom-theme';
 import { NgIconsModule, provideNgIconsConfig, withContentSecurityPolicy, withExceptionLogger } from '@ng-icons/core';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
