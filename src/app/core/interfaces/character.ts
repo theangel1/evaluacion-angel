@@ -1,10 +1,13 @@
+import { Gender } from "../types/gender.type";
+import { Status } from "../types/status.type";
+
 export interface Character {
   id: number;
   name: string;
-  status: 'Alive' | 'Dead' | 'unknown';
+  status: Status;
   species: string;
   type: string;
-  gender: 'Female' | 'Male' | 'Genderless' | 'unknown';
+  gender: Gender;
   origin: {
     name: string;
     url: string;

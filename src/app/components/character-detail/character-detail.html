@@ -1,25 +1,65 @@
 @if(character$ | async; as character ){
 <p-card header="Perfil personaje">
-<p-panel >
-    <ng-template #header>
-        <div class="flex items-center gap-2">
-            <p-avatar image="{{character.image}}" shape="circle" width="100"  />
-            <span class="font-bold">{{character.name}}</span>
+    <p-panel>
+        <ng-template #header>
+            <div class="flex items-center gap-2">
+                <p-avatar image="{{character.image}}" shape="circle" width="100" />
+                <span class="font-bold">{{character.name}}</span>
+            </div>
+        </ng-template>
+
+        <p>
+            <label class="font-bold">
+                Status:
+            </label>{{character.status}}
+        </p>
+        <p>
+            <label class="font-bold">
+                Género:
+            </label>{{character.gender}}
+        </p>
+
+
+        <p>
+            <label class="font-bold">
+                Especie:
+            </label>{{character.species}}
+        </p>
+        <p>
+            <label class="font-bold">
+                Origen:
+            </label>{{character.origin.name}}
+        </p>
+        <p>
+            <label class="font-bold">
+                Locación actual:
+            </label>{{character.location.name}}
+        </p>
+
+        <p>
+            <label class="font-bold"> Creación de perfil:</label>
+            {{character.created}}
+        </p>
+        <p>
+            <label class="font-bold">
+                Episodios:
+            </label>
+        </p>
+
+        <div class="columns-3">
+            <ul>
+                @for (episodios of character.episode; track $index) {
+
+                <li>{{episodios}}</li>
+                }
+            </ul>
         </div>
-    </ng-template>   
- 
-    <p class="m-0">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-</p-panel>
+
+
+
+    </p-panel>
 
 
 </p-card>
 
-
-
 }
-

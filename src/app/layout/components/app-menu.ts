@@ -19,61 +19,56 @@ import { MessageService } from 'primeng/api';
 })
 export class AppMenu {
 
-private messageService = inject(MessageService);
+  private messageService = inject(MessageService);
 
   constructor(
-  ) {}
+  ) { }
 
-  public loading  : boolean = false;
+  public loading: boolean = false;
 
   model: MenuItem[] = [];
 
-    ngOnInit() {
-        this.model = [
+  ngOnInit() {
+    this.model = [
+      {
+        label: 'HOME',
+        items:
+          [
             {
-                label: 'HOME',
-                items:
-                [
-                  {
-                    label: 'Home',
-                    ngIconSet: 'hero',
-                    ngIconName: 'home',
-                    icon: 'pi pi-fw pi-home',
-                    routerLink: ['/']
-                  }
-                ]
+              label: 'Home',
+              ngIconSet: 'hero',
+              ngIconName: 'home',
+              icon: 'pi pi-fw pi-home',
+              routerLink: ['/']
+            }
+          ]
+      },
+      {
+        label: 'Rick and Morty API',
+        items:
+          [
+            {
+              label: 'Lista de Urls',
+              ngIconSet: 'hero',
+              ngIconName: 'listBullet',
+              routerLink: ['/urls']
             },
-              {
-                label: 'Rick and Morty API',
-                items:
-                [
-                  {
-                    label: 'Lista de Urls',
-                    ngIconSet: 'hero',
-                    ngIconName: 'listBullet',                    
-                    routerLink: ['/urls']
-                  },
-                   {
-                    label: 'Personajes',
-                    ngIconSet: 'hero',
-                    ngIconName: 'users',                    
-                    routerLink: ['/characters']
-                  },
-                  {
-                    label: 'Lugares',
-                    ngIconSet: 'hero',
-                    ngIconName: 'mapPin',                    
-                    routerLink: ['/locations']
-                  },
-                   {
-                    label: 'detail test',
-                    ngIconSet: 'hero',
-                    ngIconName: 'mapPin',                    
-                    routerLink: ['/character-detail/:id']
-                  },
-                  
-                ]
-            },/*
+            {
+              label: 'Personajes',
+              ngIconSet: 'hero',
+              ngIconName: 'users',
+              routerLink: ['/characters']
+            },
+            {
+              label: 'Lugares',
+              ngIconSet: 'hero',
+              ngIconName: 'mapPin',
+              routerLink: ['/locations']
+            },
+
+
+          ]
+      },/*
             {
                 label: 'ADICIONALES',
                 items:
@@ -87,6 +82,6 @@ private messageService = inject(MessageService);
                     },
                 ]
             },*/
-        ];
-    }
+    ];
+  }
 }
