@@ -44,7 +44,7 @@ private messageService = inject(MessageService);
                 ]
             },
               {
-                label: 'Rick and Morty',
+                label: 'Rick and Morty API',
                 items:
                 [
                   {
@@ -65,9 +65,15 @@ private messageService = inject(MessageService);
                     ngIconName: 'mapPin',                    
                     routerLink: ['/locations']
                   },
+                   {
+                    label: 'detail test',
+                    ngIconSet: 'hero',
+                    ngIconName: 'mapPin',                    
+                    routerLink: ['/character-detail/:id']
+                  },
                   
                 ]
-            },
+            },/*
             {
                 label: 'ADICIONALES',
                 items:
@@ -80,7 +86,7 @@ private messageService = inject(MessageService);
                       command: () => this.messageService.add({severity:'success', summary:'Éxito', detail:'Hagamos algo interesante con esto'})
                     },
                 ]
-            },
+            },*/
         ];
     }
 }

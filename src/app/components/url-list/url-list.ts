@@ -1,27 +1,28 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CardModule } from 'primeng/card';
 import { RickMortyService } from '../../core/services/rick-morty-service';
-import { Observable } from 'rxjs';
-import { RickMortyUrl } from '../../core/interfaces/rickMortyUrl';
-import { AsyncPipe } from '@angular/common';
+import { RickAndMortyApiRoot } from '../../core/interfaces/rickAndMortyApiRoot ';
 
 @Component({
   selector: 'app-url-list',
-  imports: [CardModule, AsyncPipe],
+  imports: [CardModule],
   templateUrl: './url-list.html',
   styleUrl: './url-list.scss',
 })
-export class UrlList {
+
+
+export class UrlList implements OnInit {
   rickMortyService = inject(RickMortyService)
-  protected urls$: Observable<RickMortyUrl>;
+  apiRoot: RickAndMortyApiRoot = { locations: '', characters: '', episodes: '' };
 
-  //TODO porq observable?
+  ngOnInit(): void {
+    this.loadPage();
+  }
 
-  
-constructor() {
-
-  this.urls$ = this.rickMortyService.getApiUrls();
-}
-  
+  loadPage() {
+    this.rickMortyService.getApiUrls().subscribe(response => {
+      this.apiRoot = response;
+    });
+  }
 
 }

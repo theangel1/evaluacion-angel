@@ -1,3 +1,65 @@
 <p-card header="Personajes">
-    <p>characters works!</p>
+    <p-table [value]="characters" [paginator]="true" [rows]="5" [tableStyle]="{ 'min-width': '50rem' }"
+        [rowsPerPageOptions]="[5, 10, 20]" [showCurrentPageReport]="true">
+        <ng-template #header>
+            <tr>
+                <th style="width:15%">Nombre</th>
+                <th pSortableColumn="species" style="width:10%">Especie</th>
+                <th pSortableColumn="origin.name" style="width:25%">Origen</th>
+                <th pSortableColumn="status" style="width:10%">Status</th>
+                <th style="width:25%">Opciones</th>
+            </tr>
+            <tr>
+                <th>
+                    <p-columnFilter type="text" field="name" placeholder="Escribe para buscar" ariaLabel="Filtro nombre"
+                        filterOn="input"></p-columnFilter>
+                </th>
+                <th>
+                    <p-columnFilter type="text" field="species" placeholder="Escribe para buscar"
+                        ariaLabel="Filtro especie" filterOn="input"></p-columnFilter>
+                </th>
+                <th>
+                    <p-columnFilter type="text" field="origin.name" placeholder="Escribe para buscar"
+                        ariaLabel="Filtro origen" filterOn="input"></p-columnFilter>
+                </th>
+                <th>
+                    <p-columnFilter type="text" field="status" placeholder="Escribe para buscar"
+                        ariaLabel="Filtro estado" filterOn="input"></p-columnFilter>
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template #body let-character>
+            <tr >
+
+<td class="p-4">
+  <div class="flex items-center gap-4">
+    <p-avatar
+      image="{{ character.image }}"
+      size="xlarge"
+      shape="circle"
+      class="flex-shrink-0"
+      (click)="goToDetail(character.id)"
+      >
+    </p-avatar>
+    
+    <div class="flex items-center min-h-24">
+      <span class="font-bold text-900">
+        {{ character.name }}
+      </span>
+    </div>
+  </div>
+</td>
+
+
+
+                <td>{{ character.species }}</td>
+                <td>{{ character.origin.name }}</td>
+                <td>{{ character.status }}</td>
+                <td>
+                    <p-button label="Detalle" icon="pi pi-user"  (click)="goToDetail(character.id)" />
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+
 </p-card>

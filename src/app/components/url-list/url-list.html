@@ -1,10 +1,12 @@
 <p-card header="Lista de URLs">
 
-
-    <div>{{(urls$ | async)?.characters}}</div>
-    <div>{{(urls$ | async)?.locations}}</div>
-    <div>{{(urls$ | async)?.episodes}}</div>
-
+    <div>
+        <ul>
+            <li>Personajes: {{apiRoot.characters }}</li>
+            <li>Lugares: {{ apiRoot.locations }}</li>
+            <li>Episodios: {{ apiRoot.episodes }}</li>
+        </ul>
+    </div>
 
 
 </p-card>
