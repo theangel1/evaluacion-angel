@@ -29,34 +29,26 @@
             </tr>
         </ng-template>
         <ng-template #body let-character>
-            <tr >
+            <tr>
 
-<td class="p-4">
-  <div class="flex items-center gap-4">
-    <p-avatar
-      image="{{ character.image }}"
-      size="xlarge"
-      shape="circle"
-      class="flex-shrink-0"
-      (click)="goToDetail(character.id)"
-      >
-    </p-avatar>
-    
-    <div class="flex items-center min-h-24">
-      <span class="font-bold text-900">
-        {{ character.name }}
-      </span>
-    </div>
-  </div>
-</td>
+                <td class="p-4">
+                    <div class="flex items-center gap-4">
+                        <p-avatar image="{{ character.image }}" size="xlarge" shape="circle" class="flex-shrink-0"
+                            (click)="goToDetail(character.id)">
+                        </p-avatar>
 
-
-
+                        <div class="flex items-center min-h-24">
+                            <span class="font-bold text-900">
+                                {{ character.name }}
+                            </span>
+                        </div>
+                    </div>
+                </td>
                 <td>{{ character.species }}</td>
                 <td>{{ character.origin.name }}</td>
                 <td>{{ character.status }}</td>
                 <td>
-                    <p-button label="Detalle" icon="pi pi-user"  (click)="goToDetail(character.id)" />
+                    <p-button label="Detalle" icon="pi pi-user" (click)="goToDetail(character.id)" />
                 </td>
             </tr>
         </ng-template>

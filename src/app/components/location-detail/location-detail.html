@@ -1,0 +1,47 @@
+@if(location$ | async; as location ){
+<p-card header="Lugares">
+    <p-panel>
+        <ng-template #header>
+            <div class="flex items-center gap-2">                
+                <span class="font-bold">{{location.name}}</span>
+            </div>
+        </ng-template>
+
+        <p>
+            <label class="font-bold">
+                Tipo:
+            </label>{{location.type}}
+        </p>
+        <p>
+            <label class="font-bold">
+                Dimensión:
+            </label>{{location.dimension}}
+        </p>
+      
+        <p>
+            <label class="font-bold"> Fecha creación lugar:</label>
+            {{location.created}}
+        </p>
+        <p>
+            <label class="font-bold">
+                Residentes:
+            </label>
+        </p>
+
+        <div class="columns-3">
+            <ul>
+                @for (residentes of location.residents; track $index) {
+
+                <li>{{residentes}}</li>
+                }
+            </ul>
+        </div>
+
+
+
+    </p-panel>
+
+
+</p-card>
+
+}

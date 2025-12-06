@@ -16,8 +16,9 @@ import { ButtonModule } from 'primeng/button';
 export class Characters implements OnInit {
   private characterService = inject(CharactersService)
   characters: Character[] = [];
+  private router = inject(Router);
 
-  constructor(private router: Router) {}
+  
 
   ngOnInit(): void {
     this.loadPage();

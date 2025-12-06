@@ -21,7 +21,7 @@
                 <th pSortableColumn="name" style="width:25%">Nombre</th>
                 <th pSortableColumn="type" style="width:25%">Tipo</th>
                 <th style="width:25%">Dimension</th>
-                <th style="width:25%">Cantidad habitantes</th>
+                <th style="width:25%">Opciones</th>
 
             </tr>
         </ng-template>
@@ -30,7 +30,9 @@
                 <td>{{ location.name }}</td>
                 <td>{{ location.type }}</td>
                 <td>{{ location.dimension }}</td>
-                <td>{{ location.residents?.length }}</td>
+                 <td>
+                    <p-button label="Detalle" icon="pi pi-spin pi-cog" (click)="goToDetail(location.id)" />
+                </td>
             </tr>
         </ng-template>
     </p-table>
