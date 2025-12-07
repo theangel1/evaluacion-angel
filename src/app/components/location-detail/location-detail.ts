@@ -9,11 +9,12 @@ import { PanelModule } from 'primeng/panel';
 import { AvatarModule } from 'primeng/avatar';
 import { ButtonModule } from 'primeng/button';
 import { MenuModule } from 'primeng/menu';
+import { DatePipe } from "../../core/pipes/date.pipe";
 
 
 @Component({
   selector: 'app-location-detail',
-  imports: [CardModule, AsyncPipe, PanelModule, AvatarModule, ButtonModule, MenuModule],
+  imports: [CardModule, AsyncPipe, PanelModule, AvatarModule, ButtonModule, MenuModule, DatePipe],
   templateUrl: './location-detail.html',
   styleUrl: './location-detail.scss',
 })
@@ -25,7 +26,7 @@ export class LocationDetail {
   ngOnInit(): void {
 
     this.location$ = this.loadLocation();
-
+this.location$?.subscribe(data => console.log(data));
   }
 
   loadLocation() {

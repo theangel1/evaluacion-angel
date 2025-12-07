@@ -9,10 +9,11 @@ import { AvatarModule } from 'primeng/avatar';
 import { ButtonModule } from 'primeng/button';
 import { MenuModule } from 'primeng/menu';
 import { PanelModule } from 'primeng/panel';
+import { DatePipe } from "../../core/pipes/date.pipe";
 
 @Component({
   selector: 'app-character-detail',
-  imports: [CardModule, AsyncPipe,PanelModule, AvatarModule, ButtonModule, MenuModule],
+  imports: [CardModule, AsyncPipe, PanelModule, AvatarModule, ButtonModule, MenuModule, DatePipe],
   templateUrl: './character-detail.html',
   styleUrl: './character-detail.scss',
 })

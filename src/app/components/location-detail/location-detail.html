@@ -2,7 +2,7 @@
 <p-card header="Lugares">
     <p-panel>
         <ng-template #header>
-            <div class="flex items-center gap-2">                
+            <div class="flex items-center gap-2">
                 <span class="font-bold">{{location.name}}</span>
             </div>
         </ng-template>
@@ -17,10 +17,10 @@
                 Dimensión:
             </label>{{location.dimension}}
         </p>
-      
+
         <p>
             <label class="font-bold"> Fecha creación lugar:</label>
-            {{location.created}}
+            {{location.created | DateAngel}}
         </p>
         <p>
             <label class="font-bold">
