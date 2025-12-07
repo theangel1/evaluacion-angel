@@ -19,7 +19,4 @@ export class LocationService {
    getLocationById(id: string) {
       return  this.http.get<Location>(this.baseUrl + "location/" + id)
     }
-  
-
-  
 }

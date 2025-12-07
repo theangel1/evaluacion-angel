@@ -19,7 +19,7 @@ import { DatePipe } from "../../core/pipes/date.pipe";
 })
 export class CharacterDetail {
   private characterService = inject(CharactersService)
-  protected character$?: Observable<Character>;
+  character$?: Observable<Character>;
   private route = inject(ActivatedRoute);
 
   ngOnInit(): void {

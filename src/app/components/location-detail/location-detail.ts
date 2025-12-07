@@ -26,7 +26,8 @@ export class LocationDetail {
   ngOnInit(): void {
 
     this.location$ = this.loadLocation();
-this.location$?.subscribe(data => console.log(data));
+    //para el futuro...
+    //this.location$?.subscribe(data => console.log(data));
   }
 
   loadLocation() {
