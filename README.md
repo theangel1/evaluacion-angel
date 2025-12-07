@@ -98,7 +98,8 @@
       }
     }
   >RESPUESTA 
-  --> 
+  -->
+   
 const arry: number[] = [1, 2, 3, 7]; // se declara un arreglo de tipo number inicializado con sus valores respectivos.
 
 var multiply: number = 3 //acá guardamos el valor por el que queremos multiplicar. 
