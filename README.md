@@ -99,19 +99,26 @@
     }
   >RESPUESTA 
   --> 
-const arry: number[] = [1, 2, 3, 7]; // se declara un arreglo de tipo number inicializado con sus valores respectivos
-var multiply: number = 3 //acá guardamos el valor por el que queremos multiplicar. Personalmente usaría let o const para evitar problemas con el scope y mutabilidad.
+const arry: number[] = [1, 2, 3, 7]; // se declara un arreglo de tipo number inicializado con sus valores respectivos.
+
+var multiply: number = 3 //acá guardamos el valor por el que queremos multiplicar. 
+
+Personalmente usaría let o const para evitar problemas con el scope y mutabilidad.
 En la parte de la función, debería devolver un arreglo de números, pero como no se usa 'return' significa que la función devolverá undefined, ocasionando un error.
+
 El bucle for funciona correctamente, se recorre el arreglo y multiplica cada elemento con 'multiply'. Como dato importante, el arreglo se está modificando directamente.
+
 Como correción, podemos cambiar el tipo de retorno (number[]) a void ya que no devuelvo nada y estoy modificando directamente el arreglo.
 Ejemplo:
-
+```javascript
 function multiplyMe(arr: number[]): void {
 }
-
+```
 Ahora, personalmente, devolvería un nuevo arreglo en vez de modificar el original y cambiaría el scope junto con hacerlo más dinamico:
 
 
+
+```javascript
 // Usamos const para valores que no cambian
 const arry: number[] = [1, 2, 3, 7];
 const multiplier: number = 3;
@@ -126,9 +133,7 @@ const result = multiplyMe(arry, multiplier);
 
 console.log("Arreglo original:", arry); // devuelve [1, 2, 3, 7]
 console.log("Arreglo nuevo:", result); // devuelve [3, 6, 9, 21]
-
-
-
+```
 
 
   
