@@ -1,0 +1,29 @@
+# docker-compose.yml
+version: '3.9'
+
+services:
+  angular-dev:
+    build:
+      context: .
+      target: builder
+    ports:
+      - "4200:4200"
+      - "9876:9876"   # Karma (tests)
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm start
+
+  angular-test:
+    build:
+      context: .
+      target: test
+    volumes:
+      - .:/app
+
+  angular-prod:
+    build:
+      context: .
+      target: production
+    ports:
+      - "8080:80"
